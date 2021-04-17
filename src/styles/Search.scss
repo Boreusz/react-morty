@@ -1,0 +1,28 @@
+@import './shared.scss';
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 190px;
+    height: 36px;
+    padding: 0 25px 0 10px;
+    border: 1px solid $secondary-color;
+    border-radius: 6px;
+    @media (min-width: 768px) {
+      width: 240px;
+    }
+    @media (min-width: 768px) {
+      width: 280px;
+      height: 40px;
+    }
+  }
+}
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: $primary-color;
+}
