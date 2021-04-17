@@ -2,7 +2,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  NavLink
 } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import {ReactComponent as ReactLogo} from './assets/Rick_and_Morty.svg';
@@ -30,10 +31,10 @@ const App = () => {
             <nav className="nav">
               <ul className="nav__list">
                 <li className="nav__element">
-                  <Link to="/">All Characters</Link>
+                  <NavLink exact className="nav__link" activeClassName="nav__link--active" to="/">All Characters</NavLink>
                 </li>
                 <li className="nav__element">
-                  <Link to="/about">Favorites</Link>
+                  <NavLink className="nav__link" activeClassName="nav__link--active" to="/favorites">Favorites</NavLink>
                 </li>
               </ul>
             </nav>

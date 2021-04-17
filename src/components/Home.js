@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
-import { useQuery, gql } from '@apollo/client';
-import {INITIAL_QUERY} from '../GraphQL/Queries'
+import InitQuery from './InitQuery';
 
-const Home = () => {
-  const {error, loading, data} = useQuery(INITIAL_QUERY);
-  useEffect(() => {
-    console.log(data);
-  }, [data])
+const Home = ({searchInput}) => {
   return(
     <div className="home">
-
+      <InitQuery/>
     </div>
   )
 }

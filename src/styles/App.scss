@@ -46,18 +46,16 @@ hr {
     list-style: none;
     display: flex;
   }
-  &__element {
-    a {
-      color: $secondary-color;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 20px;
+  &__link {
+    color: $secondary-color;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 20px;
 
-      @media (min-width: 1024px) {
-        margin-right: 30px;
-      }
+    @media (min-width: 1024px) {
+      margin-right: 30px;
     }
-    a:focus {
+    &--active{
       color: $primary-color;
       border-bottom: 2px solid $primary-color;
     }
