@@ -1,20 +1,21 @@
 import {gql} from '@apollo/client';
 
-export const INITIAL_QUERY = gql`
-  query {
-    characters(page: 1) {
-      info {
-        count
-        pages
-      }
-      results {
-        image
-        name,
-        id
-        gender
-        species
-        episode{episode}
+export const query = (page = '1', filters = '') => {
+  return gql`
+    query {
+      characters(page: ${page}, filter: {${filters}}) {
+        info {
+          pages
+        }
+        results {
+          image
+          name,
+          id
+          gender
+          species
+          episode{episode}
+        }
       }
     }
-  }
-`
+  `
+}

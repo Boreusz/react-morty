@@ -1,0 +1,52 @@
+@import './shared.scss';
+
+.character{
+  height: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  
+  &__data {
+    font-size: 14px;
+    color: $secondary-color;
+    max-width: 45px;
+    display: flex;
+    align-items: center;
+    &--long {
+      font-size: 14px;
+      display: inline-block;
+      max-width: 60px;
+      word-wrap: break-word;
+      hyphens: manual;
+    }
+  }
+  &__image {
+    height: 68;
+    width: 45px;
+  }
+  &__gender {
+    display: none;
+  }
+  &__favorites {
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    &--active {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+    }
+  }
+  &__icon {
+    font-size: 17px;
+  }
+}

@@ -1,33 +1,16 @@
-import React from 'react'
-import { useQuery, useLazyQuery} from '@apollo/client';
-import {INITIAL_QUERY} from '../GraphQL/Queries'
-import { useEffect } from 'react';
+import React from 'react';
+import { useQuery } from '@apollo/client';
+import { query } from '../GraphQL/Queries';
+import '../styles/Query.scss';
+import QueryComponent from './QueryComponent';
 const InitQuery = () => {
-  const {error, loading, data} = useQuery(INITIAL_QUERY);
-  useEffect(() => {
-    console.log(data.characters.results);
-  }, [data])
+  const { error, loading, data } = useQuery(query());
+  if (loading) return 'Loading...';
+  if(error) return {error}
+  console.log(data);
   return (
-    <div>
-      <ul>
-         {data.characters.results.map((character) => {
-          return (
-            <li>
-              <ul>
-                <li><img src={character.image} alt={character.name + ' - ID: ' + character.id}></img></li>
-                <li>{character.id}</li>
-                <li>{character.name}</li>
-                <li>{character.gender}</li>
-                <li>{character.species}</li>
-                <li>{character.episode[character.episode.length - 1].episode}</li>
-                <li>{}</li>
-              </ul>
-            </li>
-          )
-        })}
-      </ul>
-    </div>
-  )
-}
+    <QueryComponent data={data}/>
+  );
+};
 
-export default InitQuery
+export default InitQuery;

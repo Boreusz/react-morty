@@ -1,0 +1,15 @@
+@import './shared.scss';
+.main {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+  }
+  &__element{
+    width: 90%;
+    height: 70px;
+    border-bottom: 1px solid $spacer-color;
+  }
+}

@@ -1,10 +1,12 @@
-import React from 'react';
+import React from 'react'
+import FavoritesQuery from './FavoritesQuery'
 
-const Favorites = () => {
+const Favorites = ({ favorites }) => {
   return (
-    <div className='Favorites'>
-
+    <div>
+      <FavoritesQuery />
     </div>
   )
 }
+
 export default Favorites
