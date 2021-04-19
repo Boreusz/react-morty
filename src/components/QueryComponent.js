@@ -1,32 +1,26 @@
-import React from 'react'
+import React from 'react';
 import Character from './Character';
-const Query = ({data}) => {
+import MainListHeader from './MainListHeader';
+
+const Query = ({ data, favorites, setFavorites }) => {
   return (
-    <main className='main'>
+    <section className='main'>
       <ul className='main__list'>
-        <li className='main__element'>
-          <ul className='character'>
-            <li className='character__data'>Image</li>
-            <li className='character__data'>ID</li>
-            <li className='character__data'>Name</li>
-            <li className='character__data'>Gender</li>
-            <li className='character__data'>Species</li>
-            <li className='character__data'>Episode</li>
-            <li className='character__data'>Favorites</li>
-          </ul>
-        </li>
+        <MainListHeader />
         {data.characters.results.map((character) => {
           return (
             <li className='main__element' key={character.id}>
               <Character
                 character={character}
+                favorites={favorites}
+                setFavorites={setFavorites}
               />
             </li>
           );
         })}
       </ul>
-    </main>
-  )
-}
+    </section>
+  );
+};
 
-export default Query
+export default Query;
