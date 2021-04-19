@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer className="footer">
       <ul className="footer__list">
-        <li className="footer__social"><FaGithubSquare /></li>
-        <li className="footer__social"><FaLinkedin /></li>
+        <li className="footer__social"><a href="https://github.com/Boreusz"><FaGithubSquare /></a></li>
+        <li className="footer__social"><a href="https://www.linkedin.com/in/mborowczyk/"><FaLinkedin /></a></li>
       </ul>
       <p className="footer__element">Mateusz Borowczyk - 2021</p>
     </footer>
