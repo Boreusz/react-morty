@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[In progress]Application is using GraphQL to fetch and display data from [Rick and Morty API](https://rickandmortyapi.com). React Hooks like useState and use Debounce are used to filter data to fit the need of user(at the moment we can search for specific Name).
+All of the characters will be available to mark as favorites, which will be shown on other tab
 
 ## Available Scripts
 
