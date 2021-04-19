@@ -1,13 +1,13 @@
 @import './shared.scss';
 
-.character{
+.character {
   height: 100%;
   padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  
+
   &__data {
     font-size: 14px;
     color: $secondary-color;
