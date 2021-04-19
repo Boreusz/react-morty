@@ -2,7 +2,29 @@ import React, { useState, useEffect } from 'react';
 import Gender from './Gender';
 import '../styles/Character.scss';
 import { AiFillStar } from 'react-icons/ai';
+import { FaRibbon } from 'react-icons/fa'
 
+const Avatar = ({character}) => {
+  if(character.status === 'Dead' ){
+    return (
+      <div className='image__wrapper'>
+        <img
+          className='character__image character__image--dead'
+          src={character.image}
+          alt={character.name + ' - ID: ' + character.id}
+        ></img>
+        <FaRibbon className='character__ribbon'/>
+      </div>
+    )
+  }
+  return (
+    <img
+          className='character__image character__image'
+          src={character.image}
+          alt={character.name + ' - ID: ' + character.id}
+        ></img>
+  )
+}
 const Person = ({ character, favorites, setFavorites }) => {
   const [active, setActive] = useState(false);
   const button = (
@@ -26,24 +48,20 @@ const Person = ({ character, favorites, setFavorites }) => {
     setFavorites(favorites.concat(copiedCharacter));
     setActive(true);
   };
-
   const removeFromFavorties = (favorites) => {
     setFavorites(favorites.filter((element) => element.id !== character.id));
     setActive(false);
   };
   useEffect(() => {
+    localStorage.setItem('Favorites', JSON.stringify(favorites));
     if (favorites.find((element) => element.id === character.id)) {
       setActive(true);
     }
-  }, []);
+  }, [favorites]);
   return (
     <ul className='character'>
       <li className='character__data'>
-        <img
-          className='character__image'
-          src={character.image}
-          alt={character.name + ' - ID: ' + character.id}
-        ></img>
+        <Avatar character={character} />
       </li>
       <li className='character__data'>{character.id}</li>
       <li className='character__data character__data--long'>
@@ -62,6 +80,3 @@ const Person = ({ character, favorites, setFavorites }) => {
 };
 
 export default Person;
-// TODO:
-// - if person is dead change color of the picure
-// - Favorites button

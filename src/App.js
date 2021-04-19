@@ -11,6 +11,7 @@ import { ReactComponent as ReactLogo } from './assets/Rick_and_Morty.svg';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
 import Search from './components/Search';
+import Footer from './components/Footer'
 import './styles/App.scss';
 
 const client = new ApolloClient({
@@ -21,7 +22,7 @@ const client = new ApolloClient({
 const App = () => {
   let [searchValue, setSearchValue] = useState('');
   let [activePage, setActivePage] = useState('1');
-  let [favoritesList, setFavoritesList] = useState([]);
+  let [favoritesList, setFavoritesList] = useState(JSON.parse(localStorage.getItem('Favorites')) || []);
   const setSearch = (value) => {
     setSearchValue((searchValue = `name: "${value}"`));
   };
@@ -79,6 +80,7 @@ const App = () => {
             </Switch>
           </main>
         </Router>
+        <Footer />
       </div>
     </ApolloProvider>
   );

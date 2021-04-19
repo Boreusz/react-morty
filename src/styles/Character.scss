@@ -25,6 +25,11 @@
   &__image {
     height: 68;
     width: 45px;
+    &--dead{
+      filter: rgb(175, 175, 175);
+      -webkit-filter: grayscale(0.95); 
+      filter: grayscale(0.95);
+    }
   }
   &__gender {
     display: none;
@@ -49,4 +54,14 @@
   &__icon {
     font-size: 17px;
   }
+  &__ribbon {
+    top: -5px;
+    right: -5px;
+    position: absolute;
+    color: black;
+  }
+}
+.image__wrapper{
+  position: relative;
+  height: 45px;
 }

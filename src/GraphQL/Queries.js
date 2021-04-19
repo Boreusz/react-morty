@@ -14,6 +14,7 @@ export const query = (page = '1', filters = '') => {
           gender
           species
           episode{episode}
+          status
         }
       }
     }
