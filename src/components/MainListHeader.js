@@ -9,7 +9,7 @@ const MainListHeader = () => {
         <li className='character__data'>Name</li>
         <li className='character__data '>Gender</li>
         <li className='character__data '>Species</li>
-        <li className='character__data '>Episode</li>
+        <li className='character__data '>Last Episode</li>
         <li className='character__data '>Favorites</li>
       </ul>
     </li>
