@@ -64,7 +64,7 @@ const Person = ({ character, favorites, setFavorites }) => {
         <Avatar character={character} />
       </li>
       <li className='character__data'>{character.id}</li>
-      <li className='character__data character__data--long'>
+      <li className='character__data'>
         {character.name}
       </li>
       <li className='character__data'>

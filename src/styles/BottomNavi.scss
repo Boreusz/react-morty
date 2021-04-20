@@ -2,10 +2,13 @@
 
 .pages{
   margin: 0 auto;
-  width: 90%;
+  width: 300px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  @media (min-width:1024px){
+    width: 400px;
+  }
   .button {
     background-color: white;
     border: 1px solid $secondary-color;
@@ -17,6 +20,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: 768px) {
+      width: 32px;
+      height: 32px;
+      font-size: 1.1rem;
+    }
+    @media (min-width:1024px){
+      width: 34px;
+      height: 34px;
+      font-size: 1.2rem;
+    }
   }
   .active {
     background-color: $primary-color;

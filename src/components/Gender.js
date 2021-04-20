@@ -7,22 +7,21 @@ const Gender = ({ gender }) => {
   let element;
   switch (gender) {
     case 'Male':
-      element = <BiMaleSign className='character__icon' />;
+      element = <BiMaleSign className=' character__gender' />;
       break;
     case 'Female':
-      element = <BiFemaleSign className='character__icon' />;
+      element = <BiFemaleSign className=' character__gender' />;
       break;
     case 'Genderless':
-      element = <FaGenderless className='character__icon' />;
+      element = <FaGenderless className=' character__gender' />;
       break;
     default:
-      element = <BsDash className='character__icon' />;
+      element = <BsDash className=' character__gender' />;
   }
 
   return (
     <>
       {element}
-      <span className='character__gender'>{gender}</span>
     </>
   );
 };
