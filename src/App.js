@@ -45,7 +45,7 @@ const App = () => {
                     exact
                     className='nav__link'
                     activeClassName='nav__link--active'
-                    to='/'
+                    to='/react-morty'
                   >
                     All Characters
                   </NavLink>
@@ -54,7 +54,7 @@ const App = () => {
                   <NavLink
                     className='nav__link'
                     activeClassName='nav__link--active'
-                    to='/favorites'
+                    to='/react-morty/favorites'
                   >
                     Favorites
                   </NavLink>
@@ -63,7 +63,7 @@ const App = () => {
             </nav>
 
             <Switch>
-              <Route exact path='/'>
+              <Route exact path='/react-morty'>
                 <Home
                   searchInput={searchValue}
                   activePage={activePage}
@@ -72,7 +72,7 @@ const App = () => {
                   setFavorites={setFavoritesList}
                 />
               </Route>
-              <Route path='/Favorites'>
+              <Route path='/react-morty/favorites'>
                 <Favorites
                   favorites={favoritesList}
                   setFavorites={setFavoritesList}
