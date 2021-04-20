@@ -2,10 +2,12 @@
 
 .character {
   height: 100%;
+  width: 100%;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2.8fr 1fr 2fr 2fr 1.6fr;
   align-items: center;
+  justify-items: center;
   list-style: none;
 
   &__data {

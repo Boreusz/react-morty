@@ -70,7 +70,7 @@ const Person = ({ character, favorites, setFavorites }) => {
       <li className='character__data'>
         <Gender gender={character.gender} />
       </li>
-      <li className='character__data'>{character.species}</li>
+      <li className='character__data character__data--long'>{character.species}</li>
       <li className='character__data'>
         {character.episode[character.episode.length - 1].episode}
       </li>
