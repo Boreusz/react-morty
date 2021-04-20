@@ -2,6 +2,7 @@ import React from 'react';
 import Character from './Character';
 import MainListHeader from './MainListHeader';
 import '../styles/Query.scss';
+import BottomNavi from './BottomNavi';
 
 const FavoritesQuery = ({ favorites, setFavorites }) => {
   return (

@@ -1,10 +1,11 @@
 import React from 'react';
 import CustomQuery from './CustomQuery';
 
-const Home = ({ searchInput, page, favorites, setFavorites }) => {
+const Home = ({ searchInput, activePage, setActivePage, favorites, setFavorites }) => {
   return (
     <CustomQuery
-      page={page}
+      activePage={activePage}
+      setActivePage={setActivePage}
       filters={searchInput}
       favorites={favorites}
       setFavorites={setFavorites}

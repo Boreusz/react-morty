@@ -21,7 +21,7 @@ const client = new ApolloClient({
 
 const App = () => {
   let [searchValue, setSearchValue] = useState('');
-  let [activePage, setActivePage] = useState('1');
+  let [activePage, setActivePage] = useState(1);
   let [favoritesList, setFavoritesList] = useState(JSON.parse(localStorage.getItem('Favorites')) || []);
   const setSearch = (value) => {
     setSearchValue((searchValue = `name: "${value}"`));
@@ -66,7 +66,8 @@ const App = () => {
               <Route exact path='/'>
                 <Home
                   searchInput={searchValue}
-                  page={activePage}
+                  activePage={activePage}
+                  setActivePage={setActivePage}
                   favorites={favoritesList}
                   setFavorites={setFavoritesList}
                 />

@@ -5,13 +5,15 @@ import '../styles/Query.scss';
 import QueryComponent from './QueryComponent';
 import Loading from './Loading';
 
-const CustomQuery = ({ page, filters, favorites, setFavorites }) => {
-  const { error, loading, data } = useQuery(query(page, filters));
+const CustomQuery = ({ activePage, setActivePage, filters, favorites, setFavorites }) => {
+  const { error, loading, data } = useQuery(query(activePage, filters));
   if (loading) return <Loading />;
   if (error) return error.message;
   return (
     <QueryComponent
       data={data}
+      activePage={activePage}
+      setActivePage={setActivePage}
       favorites={favorites}
       setFavorites={setFavorites}
     />

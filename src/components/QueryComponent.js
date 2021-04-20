@@ -1,8 +1,9 @@
 import React from 'react';
 import Character from './Character';
 import MainListHeader from './MainListHeader';
+import BottomNavi from './BottomNavi'
 
-const Query = ({ data, favorites, setFavorites }) => {
+const Query = ({ data, activePage, setActivePage, favorites, setFavorites }) => {
   return (
     <section className='main'>
       <ul className='main__list'>
@@ -19,6 +20,7 @@ const Query = ({ data, favorites, setFavorites }) => {
           );
         })}
       </ul>
+      <BottomNavi activePage={activePage} setActivePage={setActivePage} pages={parseInt(data.characters.info.pages)} />
     </section>
   );
 };
